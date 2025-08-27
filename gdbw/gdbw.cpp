@@ -62,6 +62,7 @@ int main(int argc, char** argv)
 	lua->RegisterGlobalFunction(gdbw::bindings::GetCommands, "GetCommands");
 	lua->RegisterGlobalFunction(gdbw::bindings::GetContext32, "GetContext32");
 	lua->RegisterGlobalFunction(gdbw::bindings::GetContext64, "GetContext64");
+	lua->RegisterGlobalFunction(gdbw::bindings::GetVMRegion, "GetVMRegion");
 	lua->RegisterGlobalFunction(gdbw::bindings::GetVMRegions, "GetVMRegions");
 	lua->RegisterGlobalFunction(gdbw::bindings::ReadMemory, "ReadMemory");
 	lua->RegisterGlobalFunction(gdbw::bindings::StepInto, "StepInto");

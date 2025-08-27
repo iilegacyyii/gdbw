@@ -330,6 +330,33 @@ namespace gdbw::bindings
 		return 1;
 	}
 
+
+	static int GetVMRegion(lua_State* L)
+	{
+		size_t address = luaL_checkinteger(L, 1);
+
+		MEMORY_BASIC_INFORMATION64 mbi = { 0 };
+
+		g_dbg->QueryVM(address, &mbi);
+		MemoryRegion region(&mbi);
+
+		lua_createtable(L, 0, 4);
+
+		lua_pushinteger(L, region.BaseAddress());
+		lua_setfield(L, -2, "baseaddress");
+
+		lua_pushinteger(L, region.Protections());
+		lua_setfield(L, -2, "protections");
+
+		lua_pushinteger(L, region.Size());
+		lua_setfield(L, -2, "size");
+
+		lua_pushinteger(L, region.State());
+		lua_setfield(L, -2, "state");
+
+		return 1;
+	}
+
 	static int GetVMRegions(lua_State* L)
 	{
 		MEMORY_BASIC_INFORMATION64 mbi = { 0 };

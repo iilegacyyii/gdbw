@@ -117,6 +117,11 @@ function Evaluate(expression) end
 ---@return boolean
 function Is64BitTarget() end
 
+---Get a virtual memory region
+---@param address integer
+---@return MemoryRegion
+function GetVMRegion(address) end
+
 ---Get a list of all virtual memory regions
 ---@return [MemoryRegion]
 function GetVMRegions() end
