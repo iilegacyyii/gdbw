@@ -5,6 +5,9 @@
 
 Every piece of gdbw is designed to be customizable, the UI, prompt, commands and all libraries the commands use are all implemented in lua (check out `/plugins`).
 
+> [!NOTE]
+> This project is still experimental. Expect frequent changes, new features, and bug fixes.
+
 ## Installation
 
 [Installation instructions can be found in our wiki](https://github.com/iilegacyyii/gdbw/wiki)
