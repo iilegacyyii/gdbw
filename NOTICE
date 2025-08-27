@@ -1,0 +1,15 @@
+NOTICE
+
+This product, gdbw, includes third-party software components:
+
+1. Capstone Engine
+   © 2013–2025 Nguyen Anh Quynh and contributors
+   License text: thirdparty/capstone/LICENSES
+
+2. Lua
+   © 1994–2025 Lua.org, PUC-Rio
+   License text: thirdparty/lua/LICENSE
+
+3. argparse (C++ argument parser)
+   © 2017–2025 Pranav Srinivas Kumar
+   License text: thirdparty/argparse/LICENSE
