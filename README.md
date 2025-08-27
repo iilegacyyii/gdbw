@@ -7,7 +7,7 @@ Every piece of gdbw is designed to be customizable, the UI, prompt, commands and
 
 ## Installation
 
-Wiki coming soon, GitHub won't let me make a wiki for a private repository...
+[Installation instructions can be found in our wiki](https://github.com/iilegacyyii/gdbw/wiki)
 
 ## Contributing
 
