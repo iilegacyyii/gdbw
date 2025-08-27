@@ -8,6 +8,9 @@ Every piece of gdbw is designed to be customizable, the UI, prompt, commands and
 > [!NOTE]
 > This project is still experimental. Expect frequent changes, new features, and bug fixes.
 
+<img width="1215" height="654" alt="image" src="https://github.com/user-attachments/assets/aad66aa8-dd59-4adf-8b2f-332a99900481" />
+
+
 ## Installation
 
 [Installation instructions can be found in our wiki](https://github.com/iilegacyyii/gdbw/wiki)
