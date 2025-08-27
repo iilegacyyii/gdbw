@@ -186,8 +186,11 @@ std::expected<ULONG, std::string> gdbw::DE::Engine::BreakpointAdd(size_t address
 
 std::expected<bool, std::string> gdbw::DE::Engine::BreakpointRemove(size_t id)
 {
-	if (id >= m_breakpoints.size() || id < 0)
+	if (id >= m_breakpoints.size()
+		|| id < 0
+		|| m_breakpoints[id] == nullptr)
 		return std::unexpected("Invalid breakpoint id");
+
 	auto hr = m_control->RemoveBreakpoint(m_breakpoints[id]);
 	RTN_IF_ERR_HR(hr, "IDebugControl->RemoveBreakpoint");
 	m_breakpoints[id] = nullptr;
