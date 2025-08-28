@@ -9,6 +9,8 @@ sym/
 *.obj.enc
 Tests/
 plugins/test.lua
+*.7z
+*.res
 
 
 ## Ignore Visual Studio temporary files, build results, and
