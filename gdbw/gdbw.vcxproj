@@ -156,6 +156,7 @@
     <ClInclude Include="Instruction.hpp" />
     <ClInclude Include="LuaManager.hpp" />
     <ClInclude Include="MemoryRegion.hpp" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="Symbols.hpp" />
     <ClInclude Include="thirdparty\argparse\argparse.hpp" />
     <ClInclude Include="thirdparty\lua\include\lauxlib.h" />
@@ -172,6 +173,9 @@
     <ClCompile Include="LuaManager.cpp" />
     <ClCompile Include="MemoryRegion.cpp" />
     <ClCompile Include="Symbols.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="gdbw.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
