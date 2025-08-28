@@ -6,7 +6,7 @@ gdbw::DE::Engine* g_dbg;
 
 argparse::ArgumentParser* parse_args(int argc, char** argv)
 {
-	auto parser = new argparse::ArgumentParser("gdbw", "0.1.0");
+	auto parser = new argparse::ArgumentParser("gdbw", "0.1.2");
 	parser->add_description("gdb for windows 'but scriptable' by (0xLegacyy & Zopazz)");
 	// Add attach and file arguments (mutually exclusive and at least one is required)
 	auto& group = parser->add_mutually_exclusive_group(true);
