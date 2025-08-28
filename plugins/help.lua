@@ -41,6 +41,14 @@ function help:command(args)
         ::searchdone::
         if found then
             _G[namespace["command"]]:command("-h")
+            -- show aliases
+            io.write("\nalias: " .. namespace["command"])
+            for i, alias in pairs(commands[namespace["command"]].alias) do
+                if alias ~= namespace["command"] then
+                    io.write(", " .. alias) 
+                end
+            end
+            print()
         else
             printf("could not find command with name '%s'", namespace["command"])
         end
