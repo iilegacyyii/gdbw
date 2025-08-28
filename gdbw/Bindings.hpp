@@ -90,6 +90,22 @@ namespace gdbw::bindings
 		return 1;
 	}
 
+	static int BreakpointSetFlags(lua_State* L)
+	{
+		size_t id = luaL_checkinteger(L, 1);
+		size_t flags = luaL_checkinteger(L, 2);
+
+		auto result = g_dbg->BreakpointSetFlags(id, (ULONG)flags);
+		if (!result)
+		{
+			lua_pushnil(L);
+			luaL_error(L, result.error().c_str());
+			return 2;
+		}
+
+		return 0;
+	}
+
 	static int BreakpointRemove(lua_State* L)
 	{
 		size_t id = luaL_checkinteger(L, 1);

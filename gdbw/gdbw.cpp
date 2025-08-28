@@ -51,6 +51,7 @@ int main(int argc, char** argv)
 	lua->RegisterGlobalFunction(gdbw::bindings::AddressToModuleName, "AddressToModuleName");
 	lua->RegisterGlobalFunction(gdbw::bindings::AddressToSymbol, "AddressToSymbol");
 	lua->RegisterGlobalFunction(gdbw::bindings::BreakpointAdd, "BreakpointAdd");
+	lua->RegisterGlobalFunction(gdbw::bindings::BreakpointSetFlags, "BreakpointSetFlags");
 	lua->RegisterGlobalFunction(gdbw::bindings::BreakpointRemove, "BreakpointRemove");
 	lua->RegisterGlobalFunction(gdbw::bindings::BreakpointGetAll, "BreakpointGetAll");
 	lua->RegisterGlobalFunction(gdbw::bindings::ConsoleCols, "ConsoleCols");

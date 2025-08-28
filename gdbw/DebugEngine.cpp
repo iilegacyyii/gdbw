@@ -184,6 +184,18 @@ std::expected<ULONG, std::string> gdbw::DE::Engine::BreakpointAdd(size_t address
 	return desired_id;
 }
 
+std::expected<bool, std::string> gdbw::DE::Engine::BreakpointSetFlags(size_t id, ULONG flags)
+{
+	if (id >= m_breakpoints.size()
+		|| id < 0
+		|| m_breakpoints[id] == nullptr)
+		return std::unexpected("Invalid breakpoint id");
+
+	auto hr = m_breakpoints[id]->SetFlags(flags);
+	RTN_IF_ERR_HR(hr, "IDebugBreakpoint->SetFlags");
+	return true;
+}
+
 std::expected<bool, std::string> gdbw::DE::Engine::BreakpointRemove(size_t id)
 {
 	if (id >= m_breakpoints.size()

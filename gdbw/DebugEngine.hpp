@@ -214,6 +214,8 @@ namespace gdbw::DE
 		std::expected<std::string, std::string> AddressToModule(ULONG64 address);
 		// Add a breakpoint
 		std::expected<ULONG, std::string> BreakpointAdd(size_t address);
+		// Set a breakpoint's flags (e.g. enable/disable)
+		std::expected<bool, std::string> BreakpointSetFlags(size_t id, ULONG flags);
 		// Remove a breakpoint
 		std::expected<bool, std::string> BreakpointRemove(size_t id);
 		// Evaluate an expression (windbg format)

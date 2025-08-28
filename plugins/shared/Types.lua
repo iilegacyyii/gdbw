@@ -82,6 +82,11 @@ function BreakpointAdd(address) end
 ---@return [Breakpoint] Array of breakpoints
 function BreakpointGetAll() end
 
+---Set a breakpoint's flags (e.g. DEBUG_BREAKPOINT_ENABLED)
+---@param id integer
+---@param flags integer
+function BreakpointSetFlags(id, flags) end
+
 ---Remove a breakpoint
 ---@param id integer breakpoint id
 function BreakpointRemove(id) end
