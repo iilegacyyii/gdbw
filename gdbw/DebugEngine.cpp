@@ -350,6 +350,10 @@ std::expected<bool, std::string> gdbw::DE::Engine::HandleFirstEvent()
 			return std::unexpected(symmanager_result.error());
 	}
 
+	// set evaluation base to 10, rather than 16
+	// This prevents issues such as `main+35` evaluating to `main+0x35`
+	m_control->SetRadix(10);
+
 	// TODO: since we're doing this anyways for expression evaluation,
 	// ...we may as well move all symbol management to `m_symbols`? 
 	m_control->Execute(DEBUG_OUTCTL_IGNORE, ".reload /f", DEBUG_EXECUTE_NOT_LOGGED);
