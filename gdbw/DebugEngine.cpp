@@ -161,10 +161,11 @@ std::expected<std::string, std::string> gdbw::DE::Engine::AddressToModule(ULONG6
 	auto hr = m_symbols->GetModuleByOffset(address, 0, NULL, &modbase);
 	RTN_IF_ERR_HR(hr, "Could not locate module containing the specified address");
 	char imagename[256] = { 0 };
-	hr = m_symbols->GetModuleNames(DEBUG_ANY_ID, modbase, imagename, 256, 0, NULL, 0, NULL, NULL, 0, NULL);
+	char loadedname[256] = { 0 };
+	hr = m_symbols->GetModuleNames(DEBUG_ANY_ID, modbase, imagename, 256, 0, NULL, 0, NULL, loadedname, 256, 0);
 	if (hr != S_OK && hr != S_FALSE)
 		return std::unexpected("Failed to retrieve specified module name");
-	std::string result = imagename;
+	std::string result = loadedname[0] ? loadedname : imagename;
 	return result;
 }
 
