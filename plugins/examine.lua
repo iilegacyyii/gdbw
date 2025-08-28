@@ -24,12 +24,12 @@ function examine:command(args)
 
     ---@type integer
     local count = 1
-    if count ~= nil then count = namespace["--count"] end
+    if namespace["--count"] ~= nil then count = namespace["--count"] end
 
     local ptr_size = 4
     if Is64BitTarget() then ptr_size = 8 end
     local to_print = ""
-    for i = 0, count do
+    for i = 0, count-1 do
         local data = memory:readptr(address + (i*ptr_size))
         if data == nil then
             printf("Failed to read data at address %s", address2hex(address + (i*ptr_size)))
