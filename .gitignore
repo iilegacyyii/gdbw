@@ -12,6 +12,7 @@ plugins/test.lua
 *.7z
 *.res
 *.dll
+release.ps1
 
 
 ## Ignore Visual Studio temporary files, build results, and
