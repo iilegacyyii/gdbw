@@ -151,7 +151,7 @@ function StepInto() end
 ---Step over
 function StepOver() end
 
----Get a symbol name given an address
+---Get a symbol given a symbol name
 ---@param address integer
 ---@return Symbol
 function SymbolNameToSymbol(address) end
