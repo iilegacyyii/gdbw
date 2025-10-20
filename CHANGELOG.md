@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.3.0] - 2025-10-20
+
+### Added
+
+- `SearchVM` binding and corresponding `search` command
+
+### Fixed
+
+- Adjusted column formatting in vmmap.lua output for better readability by replacing tab characters with spaces (Fixes underline problem mentioned in [#4](https://github.com/iilegacyyii/gdbw/issues/4))
+
 ## [0.2.0] - 2025-09-03
 
 ### Added
@@ -73,6 +83,7 @@ Thanks to [drakhaevn](https://github.com/drakhaevn) & [cavefxa](https://github.c
 - Disassembly
 - Plugin System
 
+[0.3.0]: https://github.com/iiLegacyyii/gdbw/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/iiLegacyyii/gdbw/compare/v0.1.2...v0.2.0
 [0.1.2]: https://github.com/iiLegacyyii/gdbw/compare/v0.1.1...v0.1.2
 [0.1.1]: https://github.com/iiLegacyyii/gdbw/compare/v0.1.0...v0.1.1
