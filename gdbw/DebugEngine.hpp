@@ -228,6 +228,8 @@ namespace gdbw::DE
 		std::expected<std::map<std::string, size_t>, std::string> GetRegisters(std::set<const char*> regs);
 		// Query virtual memory
 		std::expected<bool, std::string> QueryVM(ULONG64 address, PMEMORY_BASIC_INFORMATION64 mbi);
+		// Search virtual memory, returns base address on success
+		std::expected<ULONG64, std::string> SearchVM(ULONG64 address, const char* pattern, ULONG patternlen);
 		// Read virtual memory (uncached)
 		std::expected<bool, std::string> ReadVMUncached(ULONG64 address, PULONG len, PVOID out);
 		// Write virtual memory (uncached)

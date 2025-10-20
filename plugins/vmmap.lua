@@ -66,7 +66,7 @@ function vmmap:command(args)
     -- legend
     printf("LEGEND: " .. colour.YELLOW .. "STACK" .. colour.DEFAULT .. " | " .. colour.RED .. "CODE" .. colour.DEFAULT .. " | " .. colour.MAGENTA .. "DATA" .. colour.DEFAULT .. " | " .. colour.RED .. colour.UNDERLINE .. "RWX" .. colour.DEFAULT .. " | " .. "RODATA")
 
-    printf("%s\t%s %s %s %s", string.lpad("Start", 18, " "), string.lpad("End", 18, " "), string.lpad("Prot", 6, " "), string.lpad("Size", 8, " "), "Name")
+    printf("%s %s %s %s %s", string.lpad("Start", 18, " "), string.lpad("End", 18, " "), string.lpad("Prot", 6, " "), string.lpad("Size", 8, " "), "Name")
     -- To grab the stack we need to know what page range stack pointer is in
     local ctx;
     local sp;
@@ -97,6 +97,6 @@ function vmmap:command(args)
             name = ""
         end
 
-        printf("%s%s\t%s %s %s %s%s", _colour, base_str, end_str, prot_str, size_str, name, colour.DEFAULT)
+        printf("%s%s %s %s %s %s%s", _colour, base_str, end_str, prot_str, size_str, name, colour.DEFAULT)
     end
 end

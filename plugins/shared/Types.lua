@@ -145,13 +145,19 @@ function GetContext64() end
 ---@return string
 function ReadMemory(address, len) end
 
+---Find a pattern in debuggee memory, returns base address of pattern
+---@param search_base integer
+---@param pattern string
+---@return integer location
+function SearchVM(search_base, pattern) end
+
 ---Step into
 function StepInto() end
 
 ---Step over
 function StepOver() end
 
----Get a symbol name given an address
+---Get a symbol given a symbol name
 ---@param address integer
 ---@return Symbol
 function SymbolNameToSymbol(address) end
