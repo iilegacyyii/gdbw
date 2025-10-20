@@ -262,6 +262,15 @@ std::expected<bool, std::string> gdbw::DE::Engine::QueryVM(ULONG64 address, PMEM
 	return true;
 }
 
+std::expected<ULONG64, std::string> gdbw::DE::Engine::SearchVM(ULONG64 address, const char* pattern, ULONG patternlen)
+{
+	ULONG64 base = 0;
+	// search 4mb by default, should probably have this as a parameter.
+	auto hr = m_dataspaces->SearchVirtual(address, 4 * 1000000, (void*)pattern, patternlen, 1, &base);
+	RTN_IF_ERR_HR(hr, "IDebugDataSpaces2[SearchVirtual]");
+	return base;
+}
+
 std::expected<bool, std::string> gdbw::DE::Engine::ReadVMUncached(ULONG64 address, PULONG len, PVOID out)
 {
 	ULONG bytesread = 0;

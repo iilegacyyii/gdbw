@@ -69,6 +69,7 @@ int main(int argc, char** argv)
 	lua->RegisterGlobalFunction(gdbw::bindings::GetVMRegion, "GetVMRegion");
 	lua->RegisterGlobalFunction(gdbw::bindings::GetVMRegions, "GetVMRegions");
 	lua->RegisterGlobalFunction(gdbw::bindings::ReadMemory, "ReadMemory");
+	lua->RegisterGlobalFunction(gdbw::bindings::SearchVM, "SearchVM");
 	lua->RegisterGlobalFunction(gdbw::bindings::StepInto, "StepInto");
 	lua->RegisterGlobalFunction(gdbw::bindings::StepOver, "StepOver");
 	lua->RegisterGlobalFunction(gdbw::bindings::WriteMemory, "WriteMemory");

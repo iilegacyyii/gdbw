@@ -400,6 +400,37 @@ namespace gdbw::bindings
 		return 1;
 	}
 
+	static int SearchVM(lua_State* L)
+	{
+		size_t search_base = luaL_checkinteger(L, 1);
+		if (!search_base)
+		{
+			lua_pushnil(L);
+			luaL_error(L, "Invalid search base provided");
+			return 2;
+		}
+
+		size_t patternlen = 0;
+		const char* pattern = luaL_checklstring(L, 2, &patternlen);
+		if (!pattern || !*pattern)
+		{
+			lua_pushnil(L);
+			luaL_error(L, "Invalid search pattern provided");
+			return 2;
+		}
+
+		auto result = g_dbg->SearchVM(search_base, pattern, patternlen);
+		if (!result)
+		{
+			lua_pushnil(L);
+			luaL_error(L, result.error().c_str());
+			return 2;
+		}
+
+		lua_pushinteger(L, *result);
+		return 1;
+	}
+
 	static int StepInto(lua_State* L)
 	{
 		g_dbg->SetState(DE::State::STEP_INTO);
